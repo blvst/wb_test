@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Задача 2</title>
+</head>
+<body>
+  <input type="text" class="myinput">
+  <script>
+    // Создайте поле для ввода текста.
+    // При любом изменении вводимого текста выводите в консоль значение, которое содержится в поле ввода.
+    (function() {
+      let input = document.querySelector('.myinput');
+
+      input.addEventListener('input', (event) => {
+        if (event.defaultPrevented) {
+          return false;
+        }
+
+        console.log(event.target.value);
+      });
+    }());
+  </script>
+</body>
+</html>

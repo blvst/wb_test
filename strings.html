@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Работа со строками</title>
+</head>
+<body>
+  <script>
+    // #1
+    // Создайте переменные str1='Привет, ' и str2='Мир!'.
+    // С помощью этих переменных и операции сложения строк выведите на экран фразу 'Привет, Мир!'.
+    (function() {
+      let str1 = 'Привет, ';
+      let str2 = 'Мир!';
+      document.write(str1 + str2);
+    }());
+
+    // #2
+    // Создайте переменную num и присвойте ей строковое значение '12345'.
+    // Найдите произведение (умножение) цифр этого числа и выведите в консоль.
+    (function() {
+      let num = '12345';
+      console.log(num.split('').reduce((a, b) => a + parseInt(b), 0));
+    }());
+  </script>
+</body>
+</html>

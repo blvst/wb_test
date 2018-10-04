@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Задача 3</title>
+</head>
+<body>
+  <script>
+    // Сейчас console.log выводит "undefined", нужно это исправить
+    (function() {
+      function Bomb(message, delay) {
+        this.message = message;
+        setTimeout(this.blowUp.bind(this), delay * 1000);
+      }
+
+      Bomb.prototype.blowUp = function () {
+        console.log(this.message);
+      };
+
+      new Bomb("Explosion!", .5);
+    }());
+  </script>
+</body>
+</html>

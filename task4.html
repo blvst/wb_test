@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Задача 4</title>
+</head>
+<body>
+  <script>
+    // Выведите в консоль данные первых трех самолетов.
+    (function() {
+      function checkResponseStatus(response) {
+        if (response.status >= 200 && response.status < 300) {
+         return response;
+        }
+
+        const error = new Error(response.statusText);
+        error.response = response;
+
+        throw error;
+      }
+
+
+      fetch('http://data-live.flightradar24.com/zones/fcgi/feed.js?bounds=56.84,55.27,33.48,41.48')
+        .then(checkResponseStatus)
+        .then((response) => response.json())
+        .then((response) => {
+          let count = 0;
+          for(key in response) {
+            if (key === 'full_count' || key === 'version') {
+              continue;
+            }
+
+            console.log(response[key]);
+            if (count++ > 1) break;
+          }
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    }());
+  </script>
+</body>
+</html>

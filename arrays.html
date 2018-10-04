@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Работа с массивами</title>
+</head>
+<body>
+  <script>
+    // #1
+    // Создайте массив arr = ['a', 'b', 'c', 'd'] и с его помощью выведите на экран строку 'a+b, c+d'.
+    (function() {
+      let arr = ['a', 'b', 'c', 'd'];
+
+      document.write(`${arr[0]}+${arr[1]}, ${arr[2]}+${arr[3]}`);
+    }());
+
+    // #2
+    // Создайте пустой массив arr и заполните его случайными числами от 1 до 100. Результат выведите в консоль.
+    (function() {
+      function getRandom(min, max) {
+        return Math.floor(Math.random() * (max - min) + min)
+      }
+
+      let arr2 = [...new Array(100)].map(() => getRandom(1, 100));
+      console.log(arr2);
+    }());
+  </script>
+</body>
+</html>

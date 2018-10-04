@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Задача 1</title>
+</head>
+<body>
+  <script>
+    // Сгенерируйте строку из десяти случайных цифр и выведите её в консоль.
+    // Проверьте, что первым символом этой строки является цифра 1, 2 или 3.
+    (function() {
+      function getRandom(min, max) {
+        return Math.floor(Math.random() * (max - min) + min)
+      }
+
+      let str = [...new Array(10)].map(() => getRandom(0, 9)).join('');
+      let condition = parseInt(str[0]) > 0 && parseInt(str[0]) < 4;
+
+      console.log(condition ? 'да' : 'нет');
+    }());
+  </script>
+</body>
+</html>
