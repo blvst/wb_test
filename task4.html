@@ -28,7 +28,7 @@
         .then((response) => {
           let count = 0;
           for(key in response) {
-            if (key === 'full_count' || key === 'version') {
+            if (!Array.isArray(response[key])) {
               continue;
             }
 
